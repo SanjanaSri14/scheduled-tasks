@@ -2,7 +2,7 @@ name: Daily Script
 
 on:
   schedule:
-    - cron: '0 0 14 6 *'
+    - cron: '55 14 * * *'
 
   # This adds a "Run workflow" button so you can test manually
   workflow_dispatch:
@@ -29,6 +29,7 @@ jobs:
         env:
           # Your secrets are available as environment variables
           # Add more secrets in Settings > Secrets > Actions
-          MY_EMAIL: ${{ secrets.MY_EMAIL }}
-          MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
-        run: python main.py
+          API_KEY: ${{ secrets.API_KEY }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          TO_NUM: ${{ secrets.TO_NUM }}
+        run: python rain_main.py
