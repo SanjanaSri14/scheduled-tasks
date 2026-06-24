@@ -2,7 +2,7 @@ name: Daily Script
 
 on:
   schedule:
-    - cron: '58 14 * * *'
+    - cron: '* * * * *'
   # This adds a "Run workflow" button so you can test manually
   workflow_dispatch:
 
